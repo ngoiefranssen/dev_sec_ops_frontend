@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { InputText } from "primereact/inputtext";
 import { Card } from "primereact/card";
 
 import { Button } from "primereact/button";
 
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import fetchApi from "@/helpers/fetchApi";
 import { useApp } from "@/hooks/useApp";
@@ -100,7 +100,7 @@ const LoginPage = () => {
                                     <div className="w-100 d-flex justify-content-center">
                                         <label className="text-center">
                                             <h4>Connexion</h4>
-                                            <small>Veuillez s'il vous plaît entrer votre <br /> nom d'utilisateur et votre mot de passe.</small>
+                                            <small>Veuillez s&apos;il vous plaît entrer votre <br /> nom d&apos;utilisateur et votre mot de passe.</small>
                                         </label>
                                     </div>
                                 </div>
