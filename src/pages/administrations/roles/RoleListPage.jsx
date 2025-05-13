@@ -1,4 +1,4 @@
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { roles_routes_items } from "@/routes/administrations/roles_routes";
 import { Button } from "primereact/button";
@@ -6,7 +6,6 @@ import { InputText } from "primereact/inputtext";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
-import Loading from "../../../components/app/Loading";
 import { useApp } from "@/hooks/useApp";
 import fetchApi from "@/helpers/fetchApi";
 import { Menu } from "primereact/menu";
@@ -26,8 +25,6 @@ export default function RoleListPage() {
   const menu = useRef(null);
 
   const { setBreadCrumbAction } = useApp()
-
-  const navigate = useNavigate();
 
   const [lazyState, setlazyState] = useState({
     first: 0,
@@ -99,8 +96,7 @@ export default function RoleListPage() {
         detail: "Erreur du système, réessayez plus tard",
         life: 3000,
       })
-    } finally {
-    }
+    } 
   };
 
   const handleDeletePress = (e, itemsids) => {
@@ -156,7 +152,7 @@ export default function RoleListPage() {
   useEffect(() => {
 
     setBreadCrumbAction([roles_routes_items.roles])
-    document.title = `WildLeaf - ${roles_routes_items.roles.name}`
+    document.title = `DevSecOps - ${roles_routes_items.roles.name}`
 
     return () => {
       setBreadCrumbAction([]);
@@ -302,7 +298,7 @@ export default function RoleListPage() {
                           icon: 'pi pi-pencil',
                           template: item => (
                             <div className='p-menuitem-content px-3'>
-                              <Link onClick={e => setAddVisible(true)} className="flex align-items-center p-2" style={{ textDecoration: "none", color: '#3d3d3d' }}>
+                              <Link onClick={() => setAddVisible(true)} className="flex align-items-center p-2" style={{ textDecoration: "none", color: '#3d3d3d' }}>
                                 <span className={item.icon} />
                                 <span className="mx-2">{item.label}</span>
                               </Link>

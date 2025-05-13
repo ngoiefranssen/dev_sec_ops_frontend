@@ -50,7 +50,6 @@ const LoginPage = () => {
 
             setErrors(null);
 
-
         } catch (response) {
             if (response.httpStatus === 422) {
                 setErrors(response.errors);
@@ -64,12 +63,11 @@ const LoginPage = () => {
             })
         } finally {
             setIsSubmitting(false);
-
         }
     };
 
     useEffect(() => {
-        document.title = 'WildLeaf Souche - Login';
+        document.title = 'DevSecOps - Login';
     }, [])
 
     if (user.data) {

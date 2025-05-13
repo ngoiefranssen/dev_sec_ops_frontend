@@ -96,8 +96,7 @@ export default function ProfilListPage() {
         detail: "Erreur du système, réessayez plus tard",
         life: 3000,
       })
-    } finally {
-    }
+    } 
   };
 
   const handleDeletePress = (e, itemsids) => {
@@ -153,7 +152,7 @@ export default function ProfilListPage() {
   useEffect(() => {
 
     setBreadCrumbAction([profils_routes_items.profils])
-    document.title = `WildLeaf - ${profils_routes_items.profils.name}`;
+    document.title = `DevSecOps - ${profils_routes_items.profils.name}`;
 
     return () => {
       setBreadCrumbAction([]);

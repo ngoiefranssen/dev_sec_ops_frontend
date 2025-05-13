@@ -35,7 +35,7 @@ export default function SideBar() {
         className="d-flex align-items-center px-3 py-2 text-decoration-none link-dark"
       >
         <img src={'/vite.svg?url'} alt="" className="logo" />
-        <h4 className="mx-2 mb-0">WILDLEAF</h4>
+        <h4 className="mx-2 mb-0">DevSecOps</h4>
       </Link>
 
       <nav className={`px-2 flex-fill`}>

@@ -50,7 +50,7 @@ export default async function fetchApi(url, options = {}) {
     }
 
     if (!response.ok) {
-        return Promise.reject(await response.json());;
+        return Promise.reject(await response.json());
     }
 
     return await response.json();
