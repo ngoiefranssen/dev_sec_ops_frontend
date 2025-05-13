@@ -17,7 +17,7 @@ export default async function fetchApi(url, options = {}) {
         headers.authorization = `bearer ${user.token}`
     }
 
-    const response = await fetch(`${config.BASE_URL}/api${url}`, {
+    const response = await fetch(`${config.BASE_URL}/secops/api/v1${url}`, {
         ...options,
         headers
     });
